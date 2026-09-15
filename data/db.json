@@ -37,5 +37,153 @@
       "repairedAt": null
     }
   ],
-  "batches": []
+  "batches": [],
+  "reagents": [
+    {
+      "id": "reagent_wheat_starch",
+      "name": "小麦淀粉",
+      "recordUnit": "g",
+      "density": 0.58,
+      "intervalHours": 0,
+      "note": "演示数据：装密度（g/mL）",
+      "createdAt": "2026-09-15T15:09:08.300Z"
+    },
+    {
+      "id": "reagent_purified_water",
+      "name": "纯化水",
+      "recordUnit": "mL",
+      "density": 1,
+      "intervalHours": 0,
+      "note": "",
+      "createdAt": "2026-09-15T15:09:08.300Z"
+    },
+    {
+      "id": "reagent_alum",
+      "name": "明矾",
+      "recordUnit": "g",
+      "density": 1.72,
+      "intervalHours": 72,
+      "note": "演示数据：距上次成功调配需间隔72小时",
+      "createdAt": "2026-09-15T15:09:08.300Z"
+    },
+    {
+      "id": "reagent_ethanol",
+      "name": "乙醇",
+      "recordUnit": "mL",
+      "density": 0.789,
+      "intervalHours": 0,
+      "note": "",
+      "createdAt": "2026-09-15T15:09:08.300Z"
+    },
+    {
+      "id": "reagent_oxalic",
+      "name": "草酸",
+      "recordUnit": "g",
+      "density": 1.9,
+      "intervalHours": 0,
+      "note": "演示数据",
+      "createdAt": "2026-09-15T15:09:08.300Z"
+    }
+  ],
+  "incompatRules": [
+    {
+      "id": "rule_demo_1",
+      "a": "reagent_oxalic",
+      "b": "reagent_wheat_starch",
+      "reason": "演示禁配：草酸影响淀粉糊化（占位设定）",
+      "createdAt": "2026-09-15T15:09:08.300Z"
+    },
+    {
+      "id": "rule_demo_2",
+      "a": "reagent_wheat_starch",
+      "b": "reagent_ethanol",
+      "reason": "演示禁配：乙醇使淀粉脱水变性（占位设定）",
+      "createdAt": "2026-09-15T15:09:08.300Z"
+    }
+  ],
+  "formulas": [
+    {
+      "id": "formula_starch_paste",
+      "name": "淀粉糨糊",
+      "description": "托裱用基础糨糊",
+      "createdAt": "2026-09-15T15:09:08.300Z",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "status": "deprecated",
+          "note": "初版，未加明矾",
+          "components": [
+            {
+              "reagentId": "reagent_wheat_starch",
+              "kind": "mass",
+              "amount": 1,
+              "unit": "g"
+            },
+            {
+              "reagentId": "reagent_purified_water",
+              "kind": "mass",
+              "amount": 6,
+              "unit": "g"
+            }
+          ],
+          "createdAt": "2026-09-15T15:09:08.300Z",
+          "activatedAt": null
+        },
+        {
+          "version": "1.1.0",
+          "status": "active",
+          "note": "加少量明矾防腐",
+          "components": [
+            {
+              "reagentId": "reagent_wheat_starch",
+              "kind": "percent",
+              "amount": 14
+            },
+            {
+              "reagentId": "reagent_purified_water",
+              "kind": "percent",
+              "amount": 84
+            },
+            {
+              "reagentId": "reagent_alum",
+              "kind": "percent",
+              "amount": 2
+            }
+          ],
+          "createdAt": "2026-09-15T15:09:08.300Z",
+          "activatedAt": "2026-09-15T15:09:08.300Z"
+        }
+      ]
+    },
+    {
+      "id": "formula_ethanol_cleaner",
+      "name": "乙醇清洁液",
+      "description": "表面去污演示配方（体积份）",
+      "createdAt": "2026-09-15T15:09:08.300Z",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "status": "active",
+          "note": "75% 乙醇",
+          "components": [
+            {
+              "reagentId": "reagent_ethanol",
+              "kind": "percent",
+              "amount": 75
+            },
+            {
+              "reagentId": "reagent_purified_water",
+              "kind": "percent",
+              "amount": 25
+            }
+          ],
+          "createdAt": "2026-09-15T15:09:08.300Z",
+          "activatedAt": "2026-09-15T15:09:08.300Z"
+        }
+      ]
+    }
+  ],
+  "dispensingOrders": [],
+  "usages": [],
+  "clientTokens": {}
 }

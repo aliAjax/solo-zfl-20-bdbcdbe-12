@@ -1,0 +1,14 @@
+{
+  "name": "rubbing-restoration-reagent-api",
+  "version": "2.0.0",
+  "private": true,
+  "description": "古籍拓片修补：药剂配方版本管理与调配单状态机服务（零依赖 Node HTTP + JSON 持久化）",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test tests/"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
